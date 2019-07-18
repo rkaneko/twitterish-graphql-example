@@ -1,0 +1,11 @@
+fragment Tweet on Tweet {
+  id
+  body
+  tweetedAt
+  retweetCount
+  likeCount
+  creatorId
+  creator {
+    ...User
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "name": "twitterish-graphql-example",
+  "version": "0.9.0",
+  "description": "",
+  "scripts": {
+    "start": "ts-node src/server/app.ts",
+    "build:ts": "tsc",
+    "gql:gen": "graphql-codegen",
+    "gql:cat": "gqlcat -i './src/infra/twitter/graphql/src/**/*.graphql' -d ./src/infra/twitter/graphql/dist -o file -l ts -s ./graphql/schema.json",
+    "test": "ava",
+    "prettier": "prettier --write 'src/**/*.{ts,tsx}'",
+    "prettier:check": "prettier --check 'src/**/*.{ts,tsx}'"
+  },
+  "ava": {
+    "files": [
+      "src/**/*.spec.{ts,tsx}",
+      "!src/infra/twitter/graphql/src",
+      "!dist/"
+    ],
+    "concurrency": 2,
+    "failFast": true,
+    "failWithoutAssertions": true,
+    "tap": true,
+    "compileEnhancemetns": false,
+    "extensions": [
+      "ts",
+      "tsx"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "prettier": {
+    "parser": "typescript",
+    "tabWidth": 4
+  },
+  "keywords": [
+    "graphql",
+    "example"
+  ],
+  "author": "rkaneko <kanek.o.dev at gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.4.0",
+    "@graphql-codegen/introspection": "^1.4.0",
+    "@graphql-codegen/typescript": "^1.4.0",
+    "@graphql-codegen/typescript-operations": "^1.4.0",
+    "@types/graphql": "^14.2.2",
+    "ava": "^2.2.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql-concat": "^1.1.1",
+    "graphql-tools": "^4.0.5",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "apollo-cache-inmemory": "^1.6.2",
+    "apollo-client": "^2.6.3",
+    "apollo-link": "^1.2.12",
+    "apollo-link-http": "^1.5.15",
+    "apollo-link-schema": "^1.2.3",
+    "graphql": "^14.4.2",
+    "graphql-tag": "^2.10.1",
+    "isomorphic-fetch": "^2.2.1"
+  }
+}

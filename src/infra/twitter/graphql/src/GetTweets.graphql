@@ -1,0 +1,5 @@
+query GetTweets($tweetsBefore: String, $tweetsAfter: String, $tweetsFirst: Int, $tweetsLast: Int) {
+  getTweets(before: $tweetsBefore, after: $tweetsAfter, first: $tweetsFirst, last: $tweetsLast) {
+    ...TweetConnection
+  }
+}

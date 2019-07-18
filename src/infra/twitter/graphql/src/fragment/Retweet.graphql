@@ -1,0 +1,6 @@
+fragment Retweet on Retweet {
+  id
+  userId
+  tweetId
+  retweetedAt
+}

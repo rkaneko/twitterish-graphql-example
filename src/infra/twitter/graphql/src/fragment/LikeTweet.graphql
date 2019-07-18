@@ -1,0 +1,6 @@
+fragment LikeTweet on LikeTweet {
+  id
+  userId
+  tweetId
+  likedAt
+}

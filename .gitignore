@@ -1,0 +1,6 @@
+# npm
+node_modules/
+
+# TypeScript
+dist/
+!src/infra/twitter/graphql/dist/

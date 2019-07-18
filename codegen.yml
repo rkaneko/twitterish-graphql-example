@@ -1,0 +1,17 @@
+overwrite: true
+schema:
+  - ./graphql/schema.graphql
+documents:
+  - './src/infra/twitter/graphql/src/**/*.graphql'
+generates:
+  ./graphql/schema.json:
+    plugins:
+      - introspection
+  ./src/infra/twitter/DefinitionTypes.ts:
+    # documents:
+      # - './src/infra/twitter/graphql/dist/**/*.ts'
+    plugins:
+      - typescript
+      - typescript-operations
+    config:
+        immutableTypes: true

@@ -1,0 +1,10 @@
+fragment TweetConnection on TweetConnection {
+  edges {
+    node {
+      ...Tweet
+    }
+  }
+  pageInfo {
+    ...PageInfo
+  }
+}

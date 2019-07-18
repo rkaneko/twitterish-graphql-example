@@ -1,0 +1,11 @@
+query GetTweet($id: ID!, $retweetsBefore: String, $retweetsAfter: String, $retweetsFirst: Int, $retweetsLast: Int, $likesBefore: String, $likesAfter: String, $likesFirst: Int, $likesLast: Int) {
+  getTweet(id: $id) {
+    ...Tweet
+    retweets(before: $retweetsBefore, after: $retweetsAfter, first: $retweetsFirst, last: $retweetsLast) {
+      ...RetweetConnection
+    }
+    likes(before: $likesBefore, after: $likesAfter, first: $likesFirst, last: $likesLast) {
+      ...LikeTweetConnection
+    }
+  }
+}

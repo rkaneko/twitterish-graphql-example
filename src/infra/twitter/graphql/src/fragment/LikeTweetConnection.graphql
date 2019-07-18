@@ -1,0 +1,10 @@
+fragment LikeTweetConnection on LikeTweetConnection {
+  edges {
+    node {
+      ...LikeTweet
+    }
+  }
+  pageInfo {
+    ...PageInfo
+  }
+}

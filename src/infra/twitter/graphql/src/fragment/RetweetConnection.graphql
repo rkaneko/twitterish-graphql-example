@@ -1,0 +1,10 @@
+fragment RetweetConnection on RetweetConnection {
+  edges {
+    node {
+      ...Retweet
+    }
+  }
+  pageInfo {
+    ...PageInfo
+  }
+}

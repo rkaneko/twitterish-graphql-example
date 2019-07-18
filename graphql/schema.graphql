@@ -1,0 +1,139 @@
+schema {
+  mutation: Mutation
+  query: Query
+}
+
+type Mutation {
+  tweet(input: CreateTweetInput!): CreateTweetPayload
+  retweet(input: CreateRetweetInput!): CreateRetweetPayload
+  likeTweet(input: LikeTweetInput!): LikeTweetPayload
+}
+
+type Query {
+  getTweets(before: String, after: String, first: Int, last: Int): TweetConnection
+  getTweet(id: ID!): Tweet
+}
+
+scalar DateTime
+
+scalar Url
+
+input CreateTweetInput {
+  tweet: TweetCreateInput!
+  clientMutationId: String
+}
+
+input TweetCreateInput {
+  body: String!
+}
+
+type CreateTweetPayload {
+  clientMutationId: String
+  tweet: Tweet
+}
+
+input CreateRetweetInput {
+  tweet: RetweetCreateInput!
+  clientMutationId: String
+}
+
+input RetweetCreateInput {
+  tweetId: ID!
+}
+
+type CreateRetweetPayload {
+  clientMutationId: String
+  tweet: Retweet
+}
+
+input LikeTweetInput {
+  tweet: TweetLikeInput!
+  clientMutationId: String
+}
+
+input TweetLikeInput {
+  tweetId: ID!
+}
+
+type LikeTweetPayload {
+  clientMutationId: String
+  like: LikeTweet
+}
+
+interface Node {
+  id: ID!
+}
+
+type PageInfo {
+  endCursor: String
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+}
+
+type TweetConnection {
+  edges: [TweetEdge]!
+  pageInfo: PageInfo!
+}
+
+type TweetEdge {
+  cursor: String!
+  node: Tweet
+}
+
+type Tweet implements Node {
+  id: ID!
+  body: String!
+  tweetedAt: DateTime!
+  creatorId: ID!
+  creator: User!
+  retweetCount: Int!
+  retweets(before: String, after: String, first: Int, last: Int): RetweetConnection
+  likeCount: Int!
+  likes(before: String, after: String, first: Int, last: Int): LikeTweetConnection
+}
+
+type User implements Node {
+  id: ID!
+  twitterId: String!
+  joinedAt: DateTime!
+  iconUrl: Url!
+}
+
+type RetweetConnection {
+  edges: [RetweetEdge]!
+  pageInfo: PageInfo!
+}
+
+type RetweetEdge {
+  cursor: String!
+  node: Retweet
+}
+
+type Retweet implements Node {
+  id: ID!
+  userId: ID!
+  user: User!
+  tweetId: ID!
+  tweet: Tweet!
+  retweetedAt: DateTime!
+}
+
+type LikeTweetConnection {
+  edges: [LikeTweetEdge]!
+  pageInfo: PageInfo!
+}
+
+type LikeTweetEdge {
+  cursor: String!
+  node: LikeTweet
+}
+
+type LikeTweet implements Node {
+  id: ID!
+  userId: ID!
+  user: User!
+  tweetId: ID!
+  tweet: Tweet!
+  likedAt: DateTime!
+}
