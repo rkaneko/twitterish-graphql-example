@@ -1,0 +1,18 @@
+{
+  "extends": [
+    "config:base",
+    "default:preserveSemverRanges",
+    "default:automergeDigest",
+    "default:automergeBranchPush"
+  ],
+  "upgradeInRange": true,
+  "labels": [
+    "ci"
+  ],
+  "reviewers": [
+    "rkaneko"
+  ],
+  "schedule": [
+    "after 1am and before 11am every weekend"
+  ]
+}
