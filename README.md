@@ -43,6 +43,12 @@ $ npm i
 $ npm start
 ```
 
+- Watch to build front-end code
+
+```bash
+$ npm run watch:build
+```
+
 - Format code
 
 ```bash
