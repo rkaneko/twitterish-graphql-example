@@ -69,9 +69,9 @@
   "dependencies": {
     "apollo-cache-inmemory": "^1.6.3",
     "apollo-client": "^2.6.4",
-    "apollo-link": "^1.2.12",
-    "apollo-link-http": "^1.5.15",
-    "apollo-link-schema": "^1.2.3",
+    "apollo-link": "^1.2.13",
+    "apollo-link-http": "^1.5.16",
+    "apollo-link-schema": "^1.2.4",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
     "isomorphic-fetch": "^2.2.1",
