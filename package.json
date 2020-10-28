@@ -75,7 +75,7 @@
     "graphql": "^14.6.0",
     "graphql-tag": "^2.10.3",
     "isomorphic-fetch": "^2.2.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   }
 }
