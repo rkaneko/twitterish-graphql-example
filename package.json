@@ -72,7 +72,7 @@
     "apollo-link": "^1.2.13",
     "apollo-link-http": "^1.5.16",
     "apollo-link-schema": "^1.2.4",
-    "graphql": "^14.6.0",
+    "graphql": "^15.6.1",
     "graphql-tag": "^2.10.3",
     "isomorphic-fetch": "^2.2.1",
     "react": "^16.12.0",
