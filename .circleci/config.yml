@@ -32,8 +32,8 @@ jobs:
   node10:
     <<: *node-base
     docker:
-      - image: node:10
+      - image: node:19
   node12:
     <<: *node-base
     docker:
-      - image: node:12
+      - image: node:19
